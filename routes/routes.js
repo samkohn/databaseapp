@@ -99,24 +99,36 @@ exports.removed = function(req, res) {
   console.log('name = ' + hisName);
   console.log('major = ' + hisMajor);
 
-  var callback = function(err, num, people) {
-    if (err) { throw err; }
-    
-    console.log('there were people removed: ' + people);
-    res.render('removed', { title : 'Results', removedArray : people } );
-    
-  };
-
-  PersonModel.find( {
-    name : hisName,
-    major : hisMajor,
-  }, function (err, people) {
+  var callback = function (err, people) {
     for(var i = 0; i < people.length; i++)
     {
       console.log('removing ' + people[i]);
       people[i].remove();
     }
     res.render('removed', { title : 'Results', removedArray : people } );
-  });
+  };
+
+  if(hisName && hisMajor) {
+    PersonModel.find( {
+      name : hisName,
+      major : hisMajor,
+    }, callback);
+  }
+  else if(hisName) {
+    PersonModel.find( {
+      name : hisName,
+    }, callback);
+  }
+  else if(hisMajor) {
+    PersonModel.find( {
+      major : hisMajor,
+    }, callback);
+  }
+  // Behavior for blank remove?
+  /*
+  else {
+    PersonModel.find( {}, callback );
+  }
+  */
   
 }
