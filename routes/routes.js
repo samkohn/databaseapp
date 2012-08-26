@@ -23,7 +23,7 @@ var PersonModel = mongoose.model('Person', Person);
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home' });
 };
 
 exports.about = function(req, res) {
@@ -117,7 +117,6 @@ exports.removed = function(req, res) {
       people[i].remove();
     }
     res.render('removed', { title : 'Results', removedArray : people } );
-    
   });
   
 }
