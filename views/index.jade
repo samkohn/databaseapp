@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  #main Welcome to the Database!
+    #add Enter the name and major:
+      form(name='adding', action='/addedname', method='POST')
+        label(for='name') Name:
+        input(name='name', type='text', id='nameInput')
+        br
+        label(for='major') Major:
+        input(name='major', type='text', id='majorInput')
+        input(name='add', type='submit', value='Add')
+      //#addButton Add
+ 
+    #query Enter the name and/or major to look up:
+      form(name='querying', action='/queried', method='GET')
+        label(for='name') Name:
+        input(name='name', type='text')
+        br
+        label(for='major') Major:
+        input(name='major', type='text')
+        input(name='query', type='submit', value='Query')
+    #query Enter the name and/or major to remove:
+      form(name='removing', action='/removed', method='post')
+        label(for='name') Name:
+        input(name='name', type='text')
+        br
+        label(for='major') Major:
+        input(name='major', type='text')
+        input(name='remove', type='submit', value='Remove')

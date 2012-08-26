@@ -1,0 +1,62 @@
+#main
+{
+	border-style : solid;
+	border-color : black;
+	border-radius : 4px;
+	border-width : 2px;
+	margin : 8px;
+	padding : 8px;
+	max-width : 500px;
+	margin-left : auto;
+	margin-right : auto;
+	text-align : center;
+}
+
+#main *
+{
+	text-align : left;
+}
+
+.button:hover
+{
+	background-color : #E4F0FB;
+	cursor : pointer;
+}
+
+.small
+{
+	background-color : red;
+	min-width : 10px;
+	min-height : 10px;
+	border-style : solid;
+	border-radius : 4px;
+	margin : 4px;
+	padding : 4px;
+}
+
+.small:hover
+{
+	background-color : green;
+}
+
+.button
+{
+	background-color : white;
+	min-width : 20px;
+	min-height : 10px;
+	border-style : solid;
+	border-radius : 4px;
+	margin : 4px;
+	padding : 4px;
+	display : inline-block
+}
+
+.person
+{
+	background-color : #E4F0FB;
+	border-style : solid;
+	border-radius : 4px;
+	margin : 8px;
+	padding : 4px;
+}
+

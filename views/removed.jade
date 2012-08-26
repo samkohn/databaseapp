@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Results
+  p Removed the following:
+   - removedArray.forEach(function(person) {
+     .person
+       | #{person.name}
+       br
+         | #{person.major}
+   - });
