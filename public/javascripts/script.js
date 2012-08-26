@@ -44,10 +44,12 @@ $('document').ready(function()
 	
 	*/
 	$main = $('#main');
+	/*
 	$people = $('.person');
 	$people.click(function() {
 	    alert("hi");
 	});
+	*/
 
 /*
 	$('#addButton').click(function() {

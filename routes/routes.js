@@ -9,7 +9,13 @@ var Person = new Schema( {
   major : String,
 });
 
+Person.pre('remove', function(next) {
+  console.log('removing: ' + this);
+  next();
+});
+
 var PersonModel = mongoose.model('Person', Person);
+
 
 
 /*
@@ -32,7 +38,7 @@ exports.addedname = function(req, res) {
   dude.save( function(err) {
     if (err) { throw err; }
     console.log('Saved dude named ' + dude.name);
-    res.render('addedname', { title : 'Name!', person : dude}, console.log('Rendered'));
+    res.render('addedname', { title : 'Name!', person : dude});
 ;
   });
   
@@ -90,15 +96,28 @@ exports.removed = function(req, res) {
   
   var hisName = req.param('name');
   var hisMajor = req.param('major');
+  console.log('name = ' + hisName);
+  console.log('major = ' + hisMajor);
 
   var callback = function(err, num, people) {
     if (err) { throw err; }
-    console.log('people removed: ' + people);
+    
+    console.log('there were people removed: ' + people);
     res.render('removed', { title : 'Results', removedArray : people } );
+    
   };
 
-  PersonModel.remove( {
+  PersonModel.find( {
     name : hisName,
     major : hisMajor,
-  }, callback);
+  }, function (err, people) {
+    for(var i = 0; i < people.length; i++)
+    {
+      console.log('removing ' + people[i]);
+      people[i].remove();
+    }
+    res.render('removed', { title : 'Results', removedArray : people } );
+    
+  });
+  
 }
