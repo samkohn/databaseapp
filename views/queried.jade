@@ -2,10 +2,9 @@ extends layout
 
 block content
   h1 Results
-  p People are here:
-    - peopleArray.forEach(function(person) {
-      .person
-        | #{person.name}
-        br
-        | #{person.major}
-    - });
+  - peopleArray.forEach(function(person) {
+    .person
+      | #{person.name}
+      br
+      | #{person.major}
+  - });
