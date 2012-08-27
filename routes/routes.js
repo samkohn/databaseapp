@@ -1,7 +1,8 @@
 // Set up the mongoose / mongodb stuff
 
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost:27017/test');
+//var db = mongoose.connect('mongodb://localhost:27017/test');
+var db = mongoose.connect('mongodb://nodejitsu:8f1d7e1f0ba827ec9a72844c928ef6db@alex.mongohq.com:10041/nodejitsudb231811556965');
 var Schema = mongoose.Schema;
 
 var Person = new Schema( {
