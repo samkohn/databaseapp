@@ -50,19 +50,24 @@ $('document').ready(function()
 	  console.log($(this).html());
 	});
 
-/*
 	$('#addButton').click(function() {
 	    console.log('clicked');
-	    var data = {
-	    	name : $('#nameInput').val(),
-		major : $('#majorInput').val(),
-	    };
-	    $.post('/addedname', data, function() { 
-		console.log('added ' + data.name);
-	    });
-	    
+	    $('#inputForm').attr('action', '/addedname')
+	    $('#inputForm').attr('method', 'POST');
+	    $('#inputForm').submit();
 	});
-*/
+	$('#queryButton').click(function() {
+	    console.log('clicked');
+	    $('#inputForm').attr('action', '/queried')
+	    $('#inputForm').attr('method', 'GET');
+	    $('#inputForm').submit();
+	});
+	$('#removeButton').click(function() {
+	    console.log('clicked');
+	    $('#inputForm').attr('action', '/removed')
+	    $('#inputForm').attr('method', 'POST');
+	    $('#inputForm').submit();
+	});
 
 /*
 	$main.click(function()
