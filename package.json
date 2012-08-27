@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.0.2-1",
+  "version": "0.0.2-2",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -13,7 +13,7 @@
   "subdomain": "musicalrunner.test",
   "engines": {
     "node": "0.8.x"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/musicalrunner/databaseapp.git"
